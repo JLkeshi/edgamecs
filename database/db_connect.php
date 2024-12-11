@@ -1,9 +1,9 @@
 <?php
 // Database credentials
-$host = "127.0.0.1:3307";
-$dbname = "seproject";
-$username = "lloyd";
-$password = "";
+$host = "sql202.infinityfree.com";
+$dbname = "if0_37892376_seproject";
+$username = "if0_37892376";
+$password = "A84oEAkNuxwC";
 $conn = "";
 
 // Create a connection
@@ -18,5 +18,4 @@ else{
 }
 
 ?>
-
 

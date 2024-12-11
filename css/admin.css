@@ -1,0 +1,66 @@
+/* Container */
+.container-wrap {
+    width: 80%;
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #232323;
+    border-radius: 10px;
+    color: #f9f9f9;
+}
+
+/* Navigation */
+.ladder-nav {
+    display: flex;
+    align-items: center;
+    background: #343660;
+    padding: 10px 25px;
+    border-radius: 10px;
+    border: 1px solid #686EF9;
+}
+.ladder-title {
+    flex: 2;
+    font-size: 20px;
+    color: #888DFF;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+.ladder-search {
+    flex: 1;
+    padding-right: 25px;
+}
+.ladder-search input {
+    width: 100%;
+    padding: 10px;
+    color: white;
+    background: rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    border: 2px solid transparent;
+}
+
+/* Leaderboard Results Table */
+.leaderboard-results {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: left;
+}
+.leaderboard-results thead th {
+    padding: 15px;
+    background: #0073e6;
+    color: white;
+    font-size: 14px;
+}
+.leaderboard-results tbody td {
+    padding: 15px;
+    background: #ffffff;
+    color: #000000;
+    border-bottom: 5px solid #8c8c8c;
+}
+.leaderboard-results tbody tr:hover td {
+    background: #707070a7;
+}
+.delete-btn {
+    color: #ff0000;
+    text-decoration: none;
+    font-weight: bold;
+}

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/index.css">
+    <title>Welcome to Our Game!</title>
+    <link rel="icon" type="image/png" href="img/logo.png">
+</head>
+<body>
+
+    <!-- The overlay -->
+<div id="myNav" class="overlay">
+
+    <!-- Button to close the overlay navigation -->
+    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+  
+    <!-- Overlay content -->
+    <div class="overlay-content">
+      <a href="Modules.html">SOURCE</a>
+      <a href="tryit.html">TRY IT</a>
+      <a href="credits.html">CREDITS</a>
+    </div>
+  
+  </div>
+
+<!-- Video background -->
+<video class="video-bg" src="img/S.E design website.mp4" autoplay loop muted playsinline></video>
+
+<div class="content">
+    <div ontouchstart="">
+        <div class="button">
+            <a href="topic.html" id="startButton" onclick="playButtonSound(event, 'topic.html')">LEARN</a>
+        </div>
+        <div class="content"> 
+        <div class="button">
+            <a href="Quiztopic.php" id="quizButton" onclick="playButtonSound(event, 'Quiztopic.php')">QUIZ</a>
+        </div>
+        <div class="content">
+          <div class="button">
+            <a href="Settings.html" id="settingsButton" onclick="playButtonSound(event, 'Settings.html')">PROFESSOR</a>
+        </div>
+        <div class="content">
+        <div class="button">
+                <a href="leaderboard.php" id="quizButton" onclick="playButtonSound(event, 'leaderboard.php')">LEADERBOARD</a>
+        </div>
+        <div class="content">
+            <div class="button">
+              <a onclick="openNav()">OTHER</a>
+          </div>
+
+        <!-- Toggle Music Button -->
+        <input type="checkbox" id="checkboxInput" />
+        <label for="checkboxInput" class="toggleSwitch">
+            <div class="speaker">
+                <!-- Speaker icon -->
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 75 75">
+                    <path d="M39.389,13.769 L22.235,28.606 L6,28.606 L6,47.699 L21.989,47.699 L39.389,62.75 L39.389,13.769z" 
+                          style="stroke:#fff;stroke-width:5;stroke-linejoin:round;fill:#fff;"></path>
+                    <path d="M48,27.6a19.5,19.5 0 0 1 0,21.4M55.1,20.5a30,30 0 0 1 0,35.6M61.6,14a38.8,38.8 0 0 1 0,48.6" 
+                          style="fill:none;stroke:#fff;stroke-width:5;stroke-linecap:round"></path>
+                </svg>
+            </div>
+            <div class="mute-speaker">
+                <!-- Muted speaker icon -->
+                <svg viewBox="0 0 75 75" stroke="#fff" stroke-width="5">
+                    <path d="m39,14-17,15H6V48H22l17,15z" fill="#fff" stroke-linejoin="round"></path>
+                    <path d="m49,26 20,24m0-24-20,24" fill="#fff" stroke-linecap="round"></path>
+                </svg>
+            </div>
+        </label>
+
+        <!-- Background and button sounds -->
+        <audio id="backgroundMusic" loop>
+            <source src="bgm/Gaho Running StartUp OST5 Piano Cover.mp3" type="audio/mpeg">
+            Your browser does not support the audio element.
+        </audio>
+        <audio id="buttonSound" src="bgm/button.mp3" preload="auto"></audio>
+
+        <a href="aboutUs.html" class="about-button" onclick="playButtonSound(event, 'aboutUs.html')">About Us</a>
+
+        <script src="BackEnd/index.js"></script>
+    </div>
+</div>
+</body>
+</html>

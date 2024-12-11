@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="img/logo.png">
+    <title>Credits</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #ffcc8e;
+            font-family: Arial, sans-serif;
+            color: white;
+            overflow-y: auto;
+        }
+
+        /* Video background styling */
+        .video-bg {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: -1; /* Sends the video behind other content */
+        }
+
+        
+  /* Positioning for back button */
+  #backButton {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 1000; /* Ensure it's above other content */
+  }
+  
+  .btn:link,
+.btn:visited {
+    text-transform: uppercase;
+    text-decoration: none;
+    padding: 15px 40px;
+    display: inline-block;
+    border-radius: 100px;
+    transition: all .2s;
+    position: absolute;
+}
+
+.btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.btn:active {
+    transform: translateY(-1px);
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+}
+
+.btn::after {
+    content: "";
+    display: inline-block;
+    height: 100%;
+    width: 100%;
+    border-radius: 100px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    transition: all .4s;
+}
+
+.btn-white::after {
+    background-color: #ffffff79;
+}
+
+.btn:hover::after {
+    transform: scaleX(1.4) scaleY(1.6);
+    opacity: 0;
+}
+
+.btn-animated {
+    animation: moveInBottom 5s ease-out;
+    animation-fill-mode: backwards;
+}
+
+@keyframes moveInBottom {
+    0% {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0px);
+    }
+}
+
+    /* MESSAGE BUTTONS TO CHOOSE */
+
+    .fancy {
+    background-color: transparent;
+    border: 2px solid #fffdfd40;
+    border-radius: 0;
+    box-sizing: border-box;
+    color: #0000002f;
+    cursor: pointer;
+    display: inline-block;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    margin: 0;
+    outline: none;
+    overflow: visible;
+    padding: 1.25em 2em;
+    position: relative;
+    text-align: center;
+    text-decoration: none;
+    text-transform: none;
+    transition: all 0.3s ease-in-out;
+    user-select: none;
+    font-size: 13px;
+    }
+    
+    .fancy::before {
+    content: " ";
+    width: 1.5625rem;
+    height: 2px;
+    background: rgb(0, 0, 0);
+    top: 50%;
+    left: 1.5em;
+    position: absolute;
+    transform: translateY(-50%);
+    transform-origin: center;
+    transition: background 0.3s linear, width 0.3s linear;
+    }
+    
+    .fancy .text {
+    font-size: 1.125em;
+    line-height: 1.33333em;
+    padding-left: 2em;
+    display: block;
+    text-align: left;
+    transition: all 0.3s ease-in-out;
+    text-transform: uppercase;
+    text-decoration: none;
+    color: black;
+    }
+    
+    .fancy .top-key {
+    height: 2px;
+    width: 1.5625rem;
+    top: -2px;
+    left: 0.625rem;
+    position: absolute;
+    background: #ffffff49;
+    transition: width 0.5s ease-out, left 0.3s ease-out;
+    }
+    
+    .fancy .bottom-key-1 {
+    height: 2px;
+    width: 1.5625rem;
+    right: 1.875rem;
+    bottom: -2px;
+    position: absolute;
+    background: #e8e8e842;
+    transition: width 0.5s ease-out, right 0.3s ease-out;
+    }
+    
+    .fancy .bottom-key-2 {
+    height: 2px;
+    width: 0.625rem;
+    right: 0.625rem;
+    bottom: -2px;
+    position: absolute;
+    background: #000000;
+    transition: width 0.5s ease-out, right 0.3s ease-out;
+    }
+    
+    .fancy:hover {
+    color: rgba(255, 255, 255, 0.163);
+    background: rgba(255, 250, 250, 0.252);
+    }
+    
+    .fancy:hover::before {
+    width: 0.9375rem;
+    background: white;
+    }
+    
+    .fancy:hover .text {
+    color: white;
+    padding-left: 1.5em;
+    }
+    
+    .fancy:hover .top-key {
+    left: -2px;
+    width: 0px;
+    }
+    
+    .fancy:hover .bottom-key-1,
+    .fancy:hover .bottom-key-2 {
+    right: 0;
+    width: 0;
+    }
+
+
+
+
+        /* Center container */
+        .credits-container {
+            width: 90%;
+            max-width: 800px;
+            margin: 5vh auto; /* Centers content with spacing on top and bottom */
+            padding: 2em;
+            background: rgba(0, 0, 0, 0.607);
+            border-radius: 10px;
+            text-align: center;
+        }
+
+        .credits-section {
+            margin: 1em 0;
+        }
+
+        .credits-section h2 {
+            font-size: 1.5em;
+            color: #ffcc8e;
+            margin-bottom: 0.5em;
+        }
+
+        .credits-section p {
+            margin: 0.5em 0;
+        }
+
+        /* Customize scrollbar */
+        .credits-container::-webkit-scrollbar {
+            width: 8px;
+        }
+        .credits-container::-webkit-scrollbar-thumb {
+            background-color: #ffcc8e;
+            border-radius: 4px;
+        }
+        .credits-container::-webkit-scrollbar-track {
+            background: rgba(0, 0, 0, 0.3);
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            .credits-container {
+                max-width: 90%;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Video background -->
+    <video class="video-bg" src="img/S.E design website2.mp4" autoplay loop muted playsinline></video>
+
+    <!-- Back button -->
+<button id="backButton" class="fancy">
+    <span class="top-key"></span>
+    <span class="text">Back</span>
+    <span class="bottom-key-1"></span>
+    <span class="bottom-key-2"></span>
+</button>
+
+    <!-- Credits container -->
+    <div class="credits-container">
+        <h1 style="font-style: italic;">CREDITS</h1>
+        <h2 style="font-style: italic;">SOFTWARE ENGINEERING 2 </h2>
+        
+        <div class="credits-section">
+            <h2>About This Project</h2>
+            <p>This game is a collaborative project created for Software Engineering 2, designed to make learning programming concepts more interactive and accessible for Computer Science students. We hope this tool enhances your understanding and enjoyment of coding!</p>
+        </div>
+        
+        <div class="credits-section">
+            <h2>Design and Creation</h2>
+            <p>Paulina Calida</p>
+            <p>Lloyd Combalicer</p>
+            <p>Adrian Manaig</p>
+            <p>Lizette Torecampo</p>
+        </div>
+
+        <div class="credits-section">
+            <h2>Tools and Frameworks</h2>
+            <p>Universe.io - For Design and Elements</p>
+            <p>Figma & canva & Dream by Wombo & Runway - For UI Design</p>
+            <p>Bootstrap - For responsive layout</p>
+            <p>JavaScript and PHP - Core programming languages</p>
+            <p>VS Code - Code editor</p>
+        </div>
+
+        <div class="credits-section">
+            <h2>Media Resources</h2>
+            <p>W3schools - Modules</p>
+            <p>Programmiz - Run the program</p>
+            <p>Freepik - Iconography and images</p>
+            <p>Soundly Studio - Background music and sound effects</p>
+        </div>
+
+        <div class="credits-section">
+            <h2>Acknowledgments</h2>
+            <p>Prof.LAURICE MARIQUINA - Guidance and support throughout the project</p>
+            <p>Classmates - Helpful feedback during testing phases</p>
+            <p>CHATGPT - Code & Debugging Assistant</p>
+        </div>
+    </div>
+
+    <script>
+        // Functionality for back button
+    document.getElementById('backButton').addEventListener('click', function() {
+    window.location.href = 'index.html'; // Redirect to index.html
+});
+    </script>
+
+</body>
+</html>

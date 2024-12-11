@@ -1,0 +1,273 @@
+/* General Reset */
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  width: 100%;
+  overflow: auto;
+}
+
+/* Video Background */
+.video-bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -1;
+}
+
+/* Main Content Styling */
+body {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: #ffcc8e;
+}
+
+
+
+/* Responsive Layout */
+@media (max-width: 768px) {
+  .button a {
+    font-size: 1.5rem; /* Reduce font size on smaller screens */
+    padding: 12px 24px; /* Adjust padding */
+    width: 80%; /* Take up more screen width */
+  }
+}
+
+.button {
+  position: relative;
+  display: inline-block;
+  margin: 10px;
+  padding: 1px;
+}
+
+ /* Floating animation */
+ @keyframes floating {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.1); }
+  100% { transform: scale(1); }
+}
+
+/* Apply animation to buttons */
+.button a {
+  animation: floating 2s ease-in-out infinite;
+}
+
+
+.button a {
+
+  
+  color: white;
+  font-family: "ＭＳ Ｐゴシック";
+  font-weight: bold;
+  font-size: 22px;
+  text-align: center;
+  text-decoration: none;
+  background-color: #30a9ff;
+  display: block;
+  position: relative;
+  padding: 20px 40px;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  text-shadow: 3px 2px 3px #000;
+  filter: dropshadow(color=#000, offx=0px, offy=1px);
+  -webkit-box-shadow: inset 0 1px 0 #FFE5C4, 0 10px 0 #5c04c0;
+  -moz-box-shadow: inset 0 1px 0 #FFE5C4, 0 10px 0 #5c04c0;
+  box-shadow: inset 0 1px 0 #FFE5C4, 0 10px 0 #5c04c0;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 20px;
+  animation: floating 2s ease-in-out infinite;
+}
+
+.button a:active {
+  top: 10px;
+  background-color: #6600ff;
+  -webkit-box-shadow: inset 0 1px 0 #FFE5C4, inset 0 -3px 0 #6416a8;
+  -moz-box-shadow: inset 0 1px 0 #FFE5C4, inset 0 -3px 0 #6416a8;
+  box-shadow: inset 0 1px 0 #FFE5C4, inset 0 -3px 0 #6416a8;
+
+}
+
+.button:after {
+  content: "";
+  height: 100%;
+  width: 100%;
+  padding: 4px;
+  position: absolute;
+  bottom: -15px;
+  left: -4px;
+  z-index: -1;
+  background-color: #0b060075;
+  -webkit-border-radius: 40px;
+  -moz-border-radius: 3px;
+  border-radius: 20px;
+}
+
+.toggleSwitch {
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+}
+
+.about-button {
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  background-color: #30a9ff;
+  color: white;
+  font-family: Helvetica, sans-serif;
+  font-weight: bold;
+  font-size: 18px;
+  text-align: center;
+  text-decoration: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  z-index: 10;
+}
+
+.about-button:hover {
+  background-color: #6600ff;
+}
+
+/* The switch - the box around the speaker */
+.toggleSwitch {
+  width: 50px;
+  height: 50px;
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #30a9ff;
+  border-radius: 50%;
+  cursor: pointer;
+  transition-duration: 0.3s;
+  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.146);
+  overflow: hidden;
+  z-index: 1000;
+}
+
+/* Hide default HTML checkbox */
+#checkboxInput {
+  display: none;
+}
+
+.bell {
+  width: 18px;
+}
+
+.bell path {
+  fill: white;
+}
+
+.speaker {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2;
+  transition-duration: 0.3s;
+}
+
+.speaker svg {
+  width: 18px;
+}
+
+.mute-speaker {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  z-index: 3;
+  transition-duration: 0.3s;
+}
+
+.mute-speaker svg {
+  width: 18px;
+}
+
+#checkboxInput:checked + .toggleSwitch .speaker {
+  opacity: 0;
+  transition-duration: 0.3s;
+}
+
+#checkboxInput:checked + .toggleSwitch .mute-speaker {
+  opacity: 1;
+  transition-duration: 0.3s;
+  background-color: rgb(255, 0, 0);
+}
+
+#checkboxInput:active + .toggleSwitch {
+  transform: scale(0.7);
+}
+
+#checkboxInput:hover + .toggleSwitch {
+  background-color: rgb(61, 61, 61);
+}
+
+/* The Overlay (background) */
+.overlay {
+  /* Height & width depends on how you want to reveal the overlay (see JS below) */   
+  height: 100%;
+  width: 0;
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  background-color: rgb(0,0,0); /* Black fallback color */
+  background-color: rgba(0,0,0, 0.9); /* Black w/opacity */
+  overflow-x: hidden; /* Disable horizontal scroll */
+  transition: 0.5s; /* 0.5 second transition effect to slide in or slide down the overlay (height or width, depending on reveal) */
+}
+
+/* Position the content inside the overlay */
+.overlay-content {
+  position: relative;
+  top: 25%; /* 25% from the top */
+  width: 100%; /* 100% width */
+  text-align: center; /* Centered text/links */
+  margin-top: 30px; /* 30px top margin to avoid conflict with the close button on smaller screens */
+}
+
+/* The navigation links inside the overlay */
+.overlay a {
+  padding: 8px;
+  text-decoration: none;
+  font-size: 36px;
+  color: #818181;
+  display: block; /* Display block instead of inline */
+  transition: 0.3s; /* Transition effects on hover (color) */
+}
+
+/* When you mouse over the navigation links, change their color */
+.overlay a:hover, .overlay a:focus {
+  color: #f1f1f1;
+}
+
+/* Position the close button (top right corner) */
+.overlay .closebtn {
+  position: absolute;
+  top: 20px;
+  right: 45px;
+  font-size: 60px;
+}
+
+/* When the height of the screen is less than 450 pixels, change the font-size of the links and position the close button again, so they don't overlap */
+@media screen and (max-height: 450px) {
+  .overlay a {font-size: 20px}
+  .overlay .closebtn {
+    font-size: 40px;
+    top: 15px;
+    right: 35px;
+  }
+}
